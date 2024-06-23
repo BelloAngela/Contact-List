@@ -1,31 +1,20 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './App.css'
+import ContactList from './components/ContactList.jsx'
+import SelectedContact from './components/SelectedContact.jsx'
 
 function App() {
-  const [count, setCount] = useState,(0)
 
-  export default function App() {
-    const [count, setCount] = useState(0);
-  
-    useEffect((EMPTY array) => {});
-    console.log("hello from useEffect");
+  const [selectedId, setSelectedId] = useState(null)
 
-  }
-  [count] );
+  return (
     <>
+    {selectedId ? (
+        <SelectedContact setSelectedId={setSelectedId} selectedId={selectedId}/>
+      ) : (
+        <ContactList setSelectedId={setSelectedId}/>
+      )}
       
-      
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <>
-          
-      
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
